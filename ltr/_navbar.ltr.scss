@@ -1,0 +1,184 @@
+@import "_variables.ltr";
+img {
+    max-width: 100%
+}
+
+
+/*Start Navbar*/
+
+.button-bg {
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    @media screen and (min-width: $lg) {
+        display: none;
+    }
+    @media screen and (max-width:$lg) {
+        display: block;
+    }
+}
+
+.menu-icon,
+.menu-icon:before,
+.menu-icon:after {
+    height: 2px;
+    width: 30px;
+    border-radius: 10px;
+    background-color: #000
+}
+
+.menu-icon {
+    position: relative;
+    -webkit-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.menu-icon:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -20px;
+}
+
+.menu-icon:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+}
+
+.menu-icon.go {
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.menu-icon.go:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: $secodColor;
+    top: 10px
+}
+
+.menu-icon.go:after {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    top: 10px;
+    background-color: $secodColor;
+}
+
+.navbar .menu a.active {
+    color: $secodColor
+}
+
+.navbar:before {
+    @extend %pseudo;
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    @media screen and (min-width: $md) {
+        -webkit-transform: skew(-12deg);
+        transform: skew(-12deg);
+    }
+}
+
+.navbar {
+    @media screen and (max-width: $lg) {
+        top: 170px;
+        left: 1%;
+        right: 1%;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    @media screen and (min-width:$lg) {
+        top: 90px;
+        left: 5%;
+        right: 5%;
+        padding: 0 30px;
+    }
+    height: 100px;
+    position: absolute;
+    z-index: 9;
+    line-height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    .logo {
+        @media screen and (max-width: $lg) {
+            width: 40%;
+            padding: 0 10px;
+        }
+        @media screen and (min-width:$lg) {
+            width: 20%;
+        }
+        height: 70px;
+    }
+    .menu {
+        list-style: none;
+        line-height: 0;
+        @media screen and (max-width: $lg) {
+            display: none;
+            position: absolute;
+            top: 90px;
+            background-color: #fff;
+            right: 0;
+            left: 0;
+            -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+            width: 100%;
+            padding: 20px;
+        }
+        width: 65%;
+        li {
+            padding: 0 15px;
+            @media screen and (min-width: $lg) {
+                display: inline-block;
+            }
+            @media screen and (max-width:$lg) {
+                display: block;
+                line-height: 40px;
+            }
+        }
+        a {
+            text-decoration: none;
+            font-size: 16px;
+            color: $mainColor;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            &:hover {
+                color: $secodColor;
+            }
+        }
+    }
+    .order-button {
+        width: 15%;
+        @media screen and (max-width: $md) {
+            width: 40%;
+        }
+        @media screen and (min-width:$lg) {
+            // width: 15%;
+        }
+        height: 50px;
+        color: #fff;
+        line-height: 40px;
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px 10px;
+        text-align: center;
+        background-color: #e8741a;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        margin-left: 10px;
+        &:hover {
+            background-color: $mainColor;
+        }
+    }
+}

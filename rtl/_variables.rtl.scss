@@ -1,0 +1,144 @@
+@font-face {
+    font-family: "neoSans";
+    src: url("../webfonts/NeoSans-bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "neoSans";
+    src: url("../webfonts/NeoSans-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    direction:rtl
+}
+* {
+    font-family: "neoSans";
+}
+
+*:focus {
+    outline: none !important;
+}
+
+*,
+body {
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+
+/*Start Variables*/
+
+$pColor:#273f8e;
+$fontFamily: "neoSans";
+$mainColor:#273f8e;
+$secodColor:#e8741a;
+$floatRight:right;
+$floatLeft:left;
+$ltr:ltr;
+$rtl:rtl;
+$xs:576px;
+$sm:768px;
+$md:992px;
+$lg:1200px;
+
+/*End Variable*/
+
+
+/*Start Placholder Class*/
+
+.title {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 40px;
+    color: $mainColor;
+    font-size: 20px;
+}
+
+.title::before {
+    @extend %pseudo;
+    height: 2px;
+    background-color: $secodColor;
+    width: 80px;
+    right: 0;
+    bottom: -20px;
+    right: 50%;
+    margin-right: -35px;
+}
+
+.title::after {
+    @extend %pseudo;
+    -webkit-box-shadow: 0 0 0px 5px #fff;
+    box-shadow: 0 0 0px 5px #fff;
+    right: 50%;
+    bottom: -23px;
+    position: relative;
+    background-color: $secodColor;
+    display: block;
+    height: 10PX;
+    width: 10px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+%list-inline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        display: inline-block;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+%list-unstyle {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    a {
+        text-decoration: none;
+    }
+}
+
+%section {
+    padding: 40px 0;
+    text-align: center
+}
+
+%pseudo {
+    display: block;
+    content: "";
+    position: absolute;
+}
+
+%button {
+    text-decoration: none;
+    color: #fff;
+    background-color: $mainColor;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding: 10px 30px;
+    font-size: 14px;
+    display: inline-block;
+    -webkit-transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.5s;
+    &:hover {
+        background-color: $secodColor;
+    }
+}
+
+p {
+    font-size: 14px;
+    color: #1a223e;
+    margin: 20px 0;
+    line-height: 24px;
+}
+
+
+/*End Placholder Class */
